@@ -1,5 +1,5 @@
 // 1. Paste your Groq API key exactly between these quotes
-const GROQ_API_KEY = "YOUR_GROQ_API_KEY";
+const GROQ_API_KEY = "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";
 
 // --- Global State ---
 let chats = JSON.parse(localStorage.getItem('premium_bot_chats')) || [];
