@@ -1,45 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium AI Assistant</title>
     <link rel="stylesheet" href="style.css">
-
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
 </head>
-
 <body>
 
-    <div class="sidebar">
-        <button class="new-chat-btn" onclick="createNewChat()">+ New Chat</button>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <div class="sidebar" id="sidebar">
+        <button class="new-chat-btn" onclick="createNewChat()">
+            <span class="material-symbols-outlined">add</span> New Chat
+        </button>
         <div class="chat-list" id="chatList"></div>
     </div>
 
     <div class="main-content">
         <div class="chat-header">
-            AI Assistant
+            <div class="header-left">
+                <button class="header-btn" id="sidebarToggleBtn" title="Toggle Sidebar">
+                    <span class="material-symbols-outlined">menu_open</span>
+                </button>
+                <span>AI Assistant</span>
+            </div>
             <div class="header-controls">
-                <button class="header-btn" id="soundToggleBtn" title="Toggle Auto-Speech">🔇 Sound Off</button>
-                <button class="header-btn" id="shareBtn" title="Share Chat">📤 Share</button>
+                <button class="header-btn" id="themeToggleBtn" title="Toggle Theme">
+                    <span class="material-symbols-outlined">light_mode</span>
+                </button>
+                <button class="header-btn" id="soundToggleBtn" title="Toggle Voice">
+                    <span class="material-symbols-outlined">volume_off</span>
+                </button>
+                <button class="header-btn" id="shareBtn" title="Share Chat">
+                    <span class="material-symbols-outlined">ios_share</span> Share
+                </button>
             </div>
         </div>
-
-        <div class="chat-history" id="chatHistory"></div>
-
+        
+        <div class="chat-history" id="chatHistory">
+            </div>
+        
         <div class="input-area">
-            <input type="file" id="fileUpload" style="display: none;"
-                accept="image/*,.txt,.py,.java,.js,.html,.css,.csv,.cpp">
-            <button class="action-btn" id="attachBtn" title="Attach Code, CSV, or Image">📎</button>
-            <button class="action-btn" id="micBtn" title="Click to speak">🎤</button>
-            <input type="text" id="userInput" placeholder="Type a message or describe the attachment..."
-                autocomplete="off">
-            <button class="send-btn" id="sendBtn">Send</button>
+            <input type="file" id="fileUpload" style="display: none;" accept="image/*,.txt,.py,.java,.js,.html,.css,.csv,.cpp">
+            <button class="action-btn" id="attachBtn" title="Attach Code, CSV, or Image">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+            <input type="text" id="userInput" placeholder="Ask AI Assistant..." autocomplete="off">
+            <button class="action-btn mic-btn" id="micBtn" title="Click to speak">
+                <span class="material-symbols-outlined">mic</span>
+            </button>
+            <button class="send-btn" id="sendBtn" title="Send">
+                <span class="material-symbols-outlined">arrow_upward</span>
+            </button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
